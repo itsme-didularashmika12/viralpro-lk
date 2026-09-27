@@ -296,7 +296,7 @@ export const siteConfig = {
       name: "Starter Package",
       sinhalaName: "ස්ටාටර් පැකේජය",
       badge: "Essential",
-      priceDisplay: "Starting from — Contact us",
+      priceDisplay: "Starting from Rs. 7,500",
       sinhalaPriceNote: "ව්‍යාපාරයේ ස්වභාවය අනුව සාකච්ඡා කරගත හැක",
       description: "කුඩා ව්‍යාපාර, කඩසාප්පු සහ ආපනශාලා සඳහා සරල, ආකර්ෂණීය මූලික ප්‍රචාරක වීඩියෝවක්.",
       features: [
@@ -317,7 +317,7 @@ export const siteConfig = {
       name: "Standard Package",
       sinhalaName: "ස්ටෑන්ඩර්ඩ් පැකේජය",
       badge: "Most Popular",
-      priceDisplay: "Starting from — Contact us",
+      priceDisplay: "Starting from Rs. 12,500",
       sinhalaPriceNote: "වැඩි ආවරණයක් සහිත වඩාත් ජනප්‍රිය තේරීම",
       description: "වර්ධනය වන ව්‍යාපාර සඳහා වැඩි විස්තර ආවරණය කෙරෙන, උසස් නිමාවකින් යුත් ප්‍රචාරක වීඩියෝ විසඳුම.",
       features: [
@@ -339,7 +339,7 @@ export const siteConfig = {
       name: "Premium Package",
       sinhalaName: "ප්‍රිමියම් පැකේජය",
       badge: "High Impact",
-      priceDisplay: "Starting from — Contact us",
+      priceDisplay: "Starting from Rs. 20,000",
       sinhalaPriceNote: "සම්පූර්ණ ප්‍රචාරණ නිෂ්පාදනයක් අවශ්‍ය ආයතන සඳහා",
       description: "සම්පූර්ණ ආයතනික පෙනුම විදහාපාන, බහුවිධ අන්තර්ගත සහිත ඉහළම මට්ටමේ වීඩියෝ නිෂ්පාදනය.",
       features: [

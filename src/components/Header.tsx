@@ -23,6 +23,7 @@ export default function Header() {
     { name: "Video Promotion", href: "#video-promotion", badge: "Hot" },
     { name: "Services", href: "#services" },
     { name: "Packages", href: "#packages" },
+    { name: "Price List", href: "#price-list", badge: "New" },
     { name: "Process", href: "#process" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "About", href: "#about" },
@@ -49,7 +50,7 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="relative px-3 py-1.5 text-xs xl:text-sm font-medium text-neutral-700 hover:text-[#8B0A13] transition-colors rounded-md hover:bg-neutral-50"
+                className="relative px-2.5 xl:px-3 py-1.5 text-xs xl:text-sm font-medium text-neutral-700 hover:text-[#8B0A13] transition-colors rounded-md hover:bg-neutral-50 whitespace-nowrap"
               >
                 {link.name}
                 {link.badge && (
@@ -65,7 +66,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={`tel:${siteConfig.brand.phone.replace(/\s+/g, "")}`}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-700 hover:text-[#8B0A13] px-2 py-1 rounded transition-colors"
+              className="hidden xl:inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-700 hover:text-[#8B0A13] px-2 py-1 rounded transition-colors whitespace-nowrap"
               title="Call ViralPro LK"
             >
               <Phone className="w-3.5 h-3.5 text-[#8B0A13]" />
