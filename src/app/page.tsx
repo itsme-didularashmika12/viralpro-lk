@@ -6,6 +6,7 @@ import PromotionalVideoSection from "@/components/PromotionalVideoSection";
 import ServicesSection from "@/components/ServicesSection";
 import PackagesSection from "@/components/PackagesSection";
 import PriceListSection from "@/components/PriceListSection";
+import QuotationBuilderSection from "@/components/QuotationBuilderSection";
 import ProcessSection from "@/components/ProcessSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import WhyUsSection from "@/components/WhyUsSection";
@@ -39,6 +40,9 @@ export default function HomePage() {
 
         {/* 5b. COMPLETE PRICE LIST + CATALOG */}
         <PriceListSection />
+
+        {/* 5c. INTERACTIVE QUOTATION BUILDER & PDF GENERATOR */}
+        <QuotationBuilderSection />
 
         {/* 6. HOW IT WORKS */}
         <ProcessSection />
