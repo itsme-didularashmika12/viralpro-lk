@@ -1,16 +1,16 @@
 /* ============================================================
-   ViralPro LK — Complete Price List (source of truth)
-   Transcribed verbatim from the official price sheet (2026-09-27).
-   Do not alter prices, package names or "From" prefixes.
+   ViralPro LK — Complete 2026 LKR Price List (source of truth)
+   Synced with the ViralPro LK Commission Management System catalog
+   (31 services, 128 packages).
    ============================================================ */
 
 export interface PriceItem {
   name: string;
-  /** Amount without "Rs." — e.g. "7,500", "100,000+" */
+  /** Amount without "Rs." — e.g. "45,000", "3,500,000+" */
   amount?: string;
   from?: boolean;
   unit?: string; // e.g. "/ Month"
-  quote?: string; // e.g. "Quote", "Quote after requirements"
+  quote?: string; // e.g. "Quotation"
 }
 
 export interface PriceCategory {
@@ -22,295 +22,324 @@ export interface PriceCategory {
 
 export const priceList: PriceCategory[] = [
   {
-    id: "videos",
-    title: "Business Promotional Videos",
+    id: "promotional-video",
+    title: "Promotional Video",
     items: [
-      { name: "Starter Video", amount: "7,500" },
-      { name: "Business Video", amount: "12,500" },
-      { name: "Premium Video", amount: "20,000" },
+      { name: "Basic", amount: "45,000", from: true },
+      { name: "Standard", amount: "95,000", from: true },
+      { name: "Premium", amount: "165,000", from: true },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "drone",
-    title: "Drone Promotion",
-    items: [{ name: "Drone Add-On", amount: "5,000", from: true }],
-    note: "Drone availability depends on location, weather and project requirements.",
+    id: "content-creation",
+    title: "Content Creation",
+    items: [
+      { name: "Basic", amount: "45,000" },
+      { name: "Standard", amount: "95,000" },
+      { name: "Premium", amount: "165,000" },
+      { name: "Custom", quote: "Quotation" },
+    ],
   },
   {
-    id: "reels",
+    id: "reels-short-videos",
     title: "Reels / Short Videos",
     items: [
-      { name: "1 Reel", amount: "2,500" },
-      { name: "5 Reels", amount: "10,000" },
-      { name: "10 Reels", amount: "18,000" },
-      { name: "20 Reels", amount: "32,000" },
+      { name: "1 Reel", amount: "12,500" },
+      { name: "5 Reels", amount: "55,000" },
+      { name: "10 Reels", amount: "100,000" },
+      { name: "20 Reels", amount: "190,000" },
     ],
     note: "Includes: short-form editing, captions, music, SFX, social-media optimization.",
   },
   {
-    id: "social",
+    id: "drone-promotion",
+    title: "Drone Promotion",
+    items: [
+      { name: "Basic", amount: "30,000", from: true },
+      { name: "Standard", amount: "55,000", from: true },
+      { name: "Premium", amount: "95,000", from: true },
+      { name: "Custom", quote: "Quotation" },
+    ],
+    note: "Drone availability depends on location, weather and project requirements.",
+  },
+  {
+    id: "social-media-management",
     title: "Social Media Management",
     items: [
-      { name: "Starter", amount: "5,000", unit: "/ Month" },
-      { name: "Business", amount: "8,500", unit: "/ Month" },
-      { name: "Premium", amount: "15,000", unit: "/ Month" },
+      { name: "Basic", amount: "45,000", unit: "/ Month" },
+      { name: "Standard", amount: "85,000", unit: "/ Month" },
+      { name: "Premium", amount: "150,000", unit: "/ Month" },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "design",
-    title: "Graphic Design",
+    id: "facebook-instagram-management",
+    title: "Facebook / Instagram Management",
     items: [
-      { name: "Social Media Post", amount: "750" },
-      { name: "5 Posts", amount: "3,000" },
-      { name: "10 Posts", amount: "5,500" },
-      { name: "20 Posts", amount: "10,000" },
-      { name: "Poster / Flyer", amount: "1,000", from: true },
-      { name: "Banner Design", amount: "1,500", from: true },
-      { name: "Menu Design", amount: "2,000", from: true },
-      { name: "Business Card", amount: "1,000", from: true },
-      { name: "Brochure", amount: "2,500", from: true },
+      { name: "Basic", amount: "35,000", unit: "/ Month" },
+      { name: "Standard", amount: "65,000", unit: "/ Month" },
+      { name: "Premium", amount: "130,000", unit: "/ Month" },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "logo",
-    title: "Logo & Branding",
+    id: "advertising-ads-management",
+    title: "Advertising / Ads Management",
     items: [
-      { name: "Basic Logo", amount: "2,500" },
-      { name: "Pro Logo", amount: "5,000" },
-      { name: "Premium Branding", amount: "10,000" },
-    ],
-  },
-  {
-    id: "web",
-    title: "Website Development",
-    items: [
-      { name: "Starter Website", amount: "15,000", from: true },
-      { name: "Business Website", amount: "25,000", from: true },
-      { name: "Premium Website", amount: "40,000", from: true },
-    ],
-  },
-  {
-    id: "ecommerce",
-    title: "E-Commerce Website",
-    items: [
-      { name: "Starter Shop", amount: "30,000", from: true },
-      { name: "Business Shop", amount: "50,000", from: true },
-    ],
-  },
-  {
-    id: "apps",
-    title: "Mobile App Development",
-    items: [
-      { name: "Basic App", amount: "35,000", from: true },
-      { name: "Business App", amount: "60,000", from: true },
-      { name: "Custom App", amount: "100,000+", from: true },
-    ],
-    note: "Price depends on: features, UI/UX, database, authentication, admin panel, integrations.",
-  },
-  {
-    id: "lms",
-    title: "LMS / Online Class System",
-    items: [
-      { name: "Starter LMS", amount: "25,000", from: true },
-      { name: "Business LMS", amount: "50,000", from: true },
-      { name: "Custom LMS", amount: "100,000+", from: true },
-    ],
-  },
-  {
-    id: "ai",
-    title: "AI & Business Automation",
-    items: [
-      { name: "Basic Automation", amount: "5,000", from: true },
-      { name: "Business Automation", amount: "15,000", from: true },
-      { name: "Custom AI System", amount: "30,000+", from: true },
-    ],
-  },
-  {
-    id: "bots",
-    title: "WhatsApp / Telegram Bots",
-    items: [
-      { name: "Basic Bot", amount: "7,500", from: true },
-      { name: "Business Bot", amount: "15,000", from: true },
-      { name: "Custom Bot", amount: "30,000+", from: true },
-    ],
-  },
-  {
-    id: "systems",
-    title: "Business Systems",
-    items: [
-      { name: "POS System", amount: "25,000", from: true },
-      { name: "Inventory System", amount: "20,000", from: true },
-      { name: "Customer Management", amount: "20,000", from: true },
-      { name: "Employee Management", amount: "20,000", from: true },
-      { name: "Business Dashboard", amount: "25,000", from: true },
-      { name: "Custom Business System", quote: "Quote after requirements" },
-    ],
-  },
-  {
-    id: "photo",
-    title: "Photography",
-    items: [
-      { name: "Basic Session", amount: "5,000" },
-      { name: "Business Photography", amount: "10,000" },
-      { name: "Premium Business Shoot", amount: "15,000", from: true },
-    ],
-  },
-  {
-    id: "actors",
-    title: "Actor / Model",
-    items: [
-      { name: "Actor / Model", amount: "2,500", from: true },
-      { name: "2 Actors", amount: "4,500", from: true },
-      { name: "3 Actors", amount: "6,000", from: true },
-    ],
-    note: "Availability depends on project and date.",
-  },
-  {
-    id: "voiceover",
-    title: "Voice-Over",
-    items: [
-      { name: "Basic Voice-Over", amount: "1,500" },
-      { name: "Professional Voice-Over", amount: "3,000" },
-      { name: "Custom Voice-Over", amount: "5,000", from: true },
-    ],
-  },
-  {
-    id: "editing",
-    title: "Video Editing",
-    items: [
-      { name: "Short Video", amount: "1,500" },
-      { name: "Reel", amount: "2,500" },
-      { name: "Promotional Video", amount: "5,000", from: true },
-      { name: "Advanced Commercial Edit", amount: "10,000", from: true },
-    ],
-  },
-  {
-    id: "ads",
-    title: "Facebook / Instagram Ads",
-    items: [
-      { name: "Ads Setup", amount: "2,500" },
-      { name: "Ads Management", amount: "5,000", from: true, unit: "/ Month" },
-      { name: "Campaign Management", amount: "7,500", from: true },
+      { name: "Basic", amount: "30,000", unit: "/ Month" },
+      { name: "Standard", amount: "55,000", unit: "/ Month" },
+      { name: "Premium", amount: "90,000", unit: "/ Month" },
+      { name: "Custom", quote: "Quotation" },
     ],
     note: "Advertising budget is paid separately by the client.",
   },
   {
-    id: "youtube",
+    id: "tiktok-content",
+    title: "TikTok Content",
+    items: [
+      { name: "Basic", amount: "45,000", from: true },
+      { name: "Standard", amount: "95,000", from: true },
+      { name: "Premium", amount: "165,000", from: true },
+      { name: "Custom", quote: "Quotation" },
+    ],
+  },
+  {
+    id: "youtube-services",
     title: "YouTube Services",
     items: [
-      { name: "Video Editing", amount: "2,500", from: true },
-      { name: "Thumbnail", amount: "750" },
-      { name: "Channel Setup", amount: "2,500" },
-      { name: "Channel Management", amount: "7,500", from: true, unit: "/ Month" },
+      { name: "Basic", amount: "35,000" },
+      { name: "Standard", amount: "75,000" },
+      { name: "Premium", amount: "150,000" },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "tiktok",
-    title: "TikTok Services",
+    id: "video-editing",
+    title: "Video Editing",
     items: [
-      { name: "1 Video", amount: "2,000" },
-      { name: "5 Videos", amount: "8,500" },
-      { name: "10 Videos", amount: "15,000" },
-      { name: "TikTok Management", amount: "7,500", from: true, unit: "/ Month" },
+      { name: "Basic", amount: "15,000", from: true },
+      { name: "Standard", amount: "30,000", from: true },
+      { name: "Premium", amount: "65,000", from: true },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "uiux",
+    id: "photography",
+    title: "Photography",
+    items: [
+      { name: "Basic", amount: "18,000", from: true },
+      { name: "Standard", amount: "45,000", from: true },
+      { name: "Premium", amount: "85,000", from: true },
+      { name: "Custom", quote: "Quotation" },
+    ],
+  },
+  {
+    id: "actor-model",
+    title: "Actor / Model",
+    items: [
+      { name: "1 Actor", amount: "15,000", from: true },
+      { name: "2 Actors", amount: "27,000", from: true },
+      { name: "3 Actors", amount: "40,000", from: true },
+      { name: "Custom", quote: "Quotation" },
+    ],
+    note: "Availability depends on project and date.",
+  },
+  {
+    id: "voice-over",
+    title: "Voice-Over",
+    items: [
+      { name: "Basic", amount: "7,500", from: true },
+      { name: "Professional", amount: "15,000", from: true },
+      { name: "Premium", amount: "30,000", from: true },
+      { name: "Custom", quote: "Quotation" },
+    ],
+  },
+  {
+    id: "graphic-design",
+    title: "Graphic Design",
+    items: [
+      { name: "Social Post", amount: "3,500" },
+      { name: "Poster", amount: "5,000" },
+      { name: "Flyer", amount: "5,000" },
+      { name: "Banner", amount: "7,500" },
+      { name: "Menu", amount: "8,500" },
+      { name: "Brochure", amount: "15,000" },
+    ],
+  },
+  {
+    id: "logo-design",
+    title: "Logo Design",
+    items: [
+      { name: "Basic", amount: "15,000" },
+      { name: "Standard", amount: "35,000" },
+      { name: "Premium", amount: "60,000" },
+      { name: "Custom", quote: "Quotation" },
+    ],
+  },
+  {
+    id: "business-branding",
+    title: "Business Branding",
+    items: [
+      { name: "Basic", amount: "45,000" },
+      { name: "Standard", amount: "95,000" },
+      { name: "Premium", amount: "180,000" },
+      { name: "Custom", quote: "Quotation" },
+    ],
+  },
+  {
+    id: "ui-ux-design",
     title: "UI / UX Design",
     items: [
-      { name: "Basic UI Design", amount: "5,000", from: true },
-      { name: "Website UI/UX", amount: "10,000", from: true },
-      { name: "App UI/UX", amount: "15,000", from: true },
-      { name: "Custom UI/UX", quote: "Quote" },
+      { name: "Basic", amount: "75,000", from: true },
+      { name: "Standard", amount: "180,000", from: true },
+      { name: "Premium", amount: "350,000", from: true },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "hosting",
-    title: "Hosting & Website Maintenance",
+    id: "website-development",
+    title: "Website Development",
     items: [
-      { name: "Basic Maintenance", amount: "2,500", from: true, unit: "/ Month" },
-      { name: "Business Maintenance", amount: "5,000", from: true, unit: "/ Month" },
-      { name: "Custom Support", quote: "Quote" },
+      { name: "Landing Page", amount: "60,000", from: true },
+      { name: "Basic Business Website", amount: "95,000", from: true },
+      { name: "Standard Website", amount: "150,000", from: true },
+      { name: "Premium Website", amount: "300,000+" },
+      { name: "Custom Web App", amount: "500,000", from: true },
+    ],
+  },
+  {
+    id: "e-commerce-website",
+    title: "E-Commerce Website",
+    items: [
+      { name: "Basic", amount: "180,000", from: true },
+      { name: "Standard", amount: "350,000", from: true },
+      { name: "Premium", amount: "650,000", from: true },
+      { name: "Custom", quote: "Quotation" },
+    ],
+  },
+  {
+    id: "hosting-website-maintenance",
+    title: "Hosting / Website Maintenance",
+    items: [
+      { name: "Basic", amount: "7,500", unit: "/ Month" },
+      { name: "Standard", amount: "15,000", unit: "/ Month" },
+      { name: "Premium", amount: "30,000", unit: "/ Month" },
+      { name: "Custom", quote: "Quotation" },
     ],
     note: "Hosting/domain charges may be separate depending on requirements.",
   },
   {
-    id: "qr",
-    title: "QR & Digital Business Materials",
+    id: "mobile-app-development",
+    title: "Mobile App Development",
     items: [
-      { name: "QR Code Design", amount: "750" },
-      { name: "Digital Menu", amount: "2,500", from: true },
-      { name: "Digital Business Card", amount: "1,500" },
-      { name: "Link Page", amount: "2,500", from: true },
-      { name: "Custom Digital Material", quote: "Quote" },
+      { name: "Basic", amount: "800,000", from: true },
+      { name: "Standard", amount: "1,800,000", from: true },
+      { name: "Premium", amount: "3,500,000+" },
+      { name: "Custom", quote: "Quotation" },
+    ],
+    note: "Price depends on: features, UI/UX, database, authentication, admin panel, integrations.",
+  },
+  {
+    id: "lms-online-class",
+    title: "LMS / Online Class",
+    items: [
+      { name: "Basic", amount: "450,000", from: true },
+      { name: "Standard", amount: "1,200,000", from: true },
+      { name: "Premium", amount: "2,500,000+" },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "book",
-    title: "Book / PDF Design",
+    id: "ai-business-automation",
+    title: "AI / Business Automation",
     items: [
-      { name: "Basic PDF Design", amount: "2,500", from: true },
-      { name: "Book Design", amount: "5,000", from: true },
-      { name: "Premium Book Design", amount: "10,000", from: true },
-    ],
-    note: "Price depends on: number of pages, design complexity, images, formatting requirements.",
-  },
-  {
-    id: "cv",
-    title: "CV & Document Design",
-    items: [
-      { name: "Basic CV", amount: "750" },
-      { name: "Professional CV", amount: "1,500" },
-      { name: "Premium CV", amount: "2,500" },
+      { name: "Basic", amount: "75,000", from: true },
+      { name: "Standard", amount: "250,000", from: true },
+      { name: "Premium", amount: "750,000+" },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "boosting",
-    title: "Social Media Boosting",
-    items: [{ name: "TikTok / Facebook / Instagram / YouTube", quote: "Custom quote available" }],
-    note: "Price depends on: platform, service, quantity, delivery requirements.",
-  },
-  {
-    id: "indicators",
-    title: "Trading Indicators",
+    id: "whatsapp-telegram-bot",
+    title: "WhatsApp / Telegram Bot",
     items: [
-      { name: "Custom Indicator", amount: "5,000", from: true },
-      { name: "Advanced Indicator", amount: "10,000", from: true },
-      { name: "Custom Trading Tool", quote: "Quote" },
+      { name: "Basic", amount: "75,000", from: true },
+      { name: "Standard", amount: "150,000", from: true },
+      { name: "Advanced", amount: "300,000+" },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "autotrade",
-    title: "Auto Trade Bots",
+    id: "pos-system",
+    title: "POS System",
     items: [
-      { name: "Basic Bot", amount: "15,000", from: true },
-      { name: "Advanced Bot", amount: "30,000", from: true },
-      { name: "Custom Bot", amount: "50,000+", from: true },
-    ],
-    note: "Price depends on: strategy, platform, broker/API, risk controls, automation requirements.",
-  },
-  {
-    id: "branding-pkg",
-    title: "Business Branding Package",
-    items: [
-      { name: "Starter", amount: "7,500" },
-      { name: "Business", amount: "15,000" },
-      { name: "Premium", amount: "30,000" },
+      { name: "Basic", amount: "150,000", from: true },
+      { name: "Standard", amount: "350,000", from: true },
+      { name: "Premium", amount: "750,000+" },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "launch-pkg",
-    title: "Business Launch Package",
+    id: "inventory-system",
+    title: "Inventory System",
     items: [
-      { name: "Starter", amount: "25,000" },
-      { name: "Growth", amount: "40,000" },
-      { name: "Premium", amount: "65,000+" },
+      { name: "Basic", amount: "200,000", from: true },
+      { name: "Standard", amount: "450,000", from: true },
+      { name: "Premium", amount: "900,000+" },
+      { name: "Custom", quote: "Quotation" },
     ],
   },
   {
-    id: "custom",
-    title: "Custom Business Package",
-    items: [{ name: "Combine any services into your own package", quote: "Contact us for a custom quotation" }],
+    id: "customer-management-system",
+    title: "Customer Management System",
+    items: [
+      { name: "Basic", amount: "250,000", from: true },
+      { name: "Standard", amount: "550,000", from: true },
+      { name: "Premium", amount: "1,200,000+" },
+      { name: "Custom", quote: "Quotation" },
+    ],
+  },
+  {
+    id: "employee-management-system",
+    title: "Employee Management System",
+    items: [
+      { name: "Basic", amount: "250,000", from: true },
+      { name: "Standard", amount: "550,000", from: true },
+      { name: "Premium", amount: "1,200,000+" },
+      { name: "Custom", quote: "Quotation" },
+    ],
+  },
+  {
+    id: "business-dashboard",
+    title: "Business Dashboard",
+    items: [
+      { name: "Basic", amount: "150,000", from: true },
+      { name: "Standard", amount: "350,000", from: true },
+      { name: "Premium", amount: "750,000+" },
+      { name: "Custom", quote: "Quotation" },
+    ],
+  },
+  {
+    id: "qr-digital-business-materials",
+    title: "QR / Digital Business Materials",
+    items: [
+      { name: "QR Design", amount: "5,000" },
+      { name: "QR Business Card", amount: "10,000" },
+      { name: "QR + Digital Menu", amount: "15,000" },
+      { name: "Digital Business Profile", amount: "25,000" },
+    ],
+  },
+  {
+    id: "extra-services",
+    title: "Extra Services",
+    items: [
+      { name: "Extra Revision", amount: "3,500" },
+      { name: "Extra Graphic", amount: "3,500", from: true },
+      { name: "Extra Location", amount: "7,500", from: true },
+      { name: "Extra Shooting Hour", amount: "12,500" },
+      { name: "Extra Reel", amount: "12,500", from: true },
+    ],
   },
 ];
 
@@ -342,9 +371,9 @@ export const catalogImages: CatalogImage[] = [
   { file: "/images/catalog/09-systems-photo.png", title: "Business Systems + Photography" },
   { file: "/images/catalog/10-talent-editing.png", title: "Actor/Model + Voice-Over + Editing" },
   { file: "/images/catalog/11-ads-platforms-uiux.png", title: "Ads + YouTube + TikTok + UI/UX" },
-  { file: "/images/catalog/12-hosting-digital.png", title: "Hosting + QR & Digital + Book/PDF + CV" },
-  { file: "/images/catalog/13-boosting-trading.png", title: "Boosting + Trading + Auto Trade Bots" },
+  { file: "/images/catalog/12-hosting-digital.png", title: "Hosting + QR & Digital + FB/IG + Extra" },
+  { file: "/images/catalog/13-boosting-trading.png", title: "Content Creation + Drone Promotion" },
   { file: "/images/catalog/14-branding-package.png", title: "Business Branding Package" },
-  { file: "/images/catalog/15-launch-package.png", title: "Business Launch Package" },
+  { file: "/images/catalog/15-launch-package.png", title: "Enterprise Systems Overview" },
   { file: "/images/catalog/16-custom-notes.png", title: "Custom Package + Important Notes" },
 ];

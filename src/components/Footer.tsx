@@ -98,6 +98,16 @@ export default function Footer() {
                   Contact Us
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://viralpro-commission-system.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#E53E3E] hover:text-white font-semibold transition-colors"
+                >
+                  Team &amp; Commission Portal ↗
+                </a>
+              </li>
             </ul>
           </div>
 

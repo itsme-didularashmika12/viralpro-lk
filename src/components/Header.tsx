@@ -74,6 +74,17 @@ export default function Header() {
             </a>
 
             <a
+              href="https://viralpro-commission-system.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-700 hover:text-[#8B0A13] border border-neutral-200 hover:border-[#8B0A13]/40 px-3 py-2 rounded-lg transition-colors whitespace-nowrap"
+              title="ViralPro LK Team & Commission Portal"
+            >
+              <span>Team Portal</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#8B0A13]" />
+            </a>
+
+            <a
               href={siteConfig.getWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
@@ -134,6 +145,15 @@ export default function Header() {
           </div>
 
           <div className="mt-4 pt-4 border-t border-neutral-100 flex flex-col gap-2.5">
+            <a
+              href="https://viralpro-commission-system.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-[#8B0A13] bg-[#8B0A13]/10 hover:bg-[#8B0A13]/15 rounded-lg"
+            >
+              <span>Team &amp; Commission Portal</span>
+              <ArrowUpRight className="w-4 h-4 text-[#8B0A13]" />
+            </a>
             <a
               href={`tel:${siteConfig.brand.phone.replace(/\s+/g, "")}`}
               className="flex items-center justify-center gap-2 w-full py-2.5 px-4 text-sm font-semibold text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-lg"
