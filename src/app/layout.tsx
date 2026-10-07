@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   creator: "ViralPro LK",
   publisher: "ViralPro LK",
   metadataBase: new URL("https://viralpro-lk.vercel.app"),
+  verification: {
+    google: "5Az78BfU61E7z4IjlEgW5mI11HxfIjwjgT127mKRWas",
+  },
   alternates: {
     canonical: "/",
   },
