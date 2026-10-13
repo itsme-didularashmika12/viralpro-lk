@@ -20,16 +20,16 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Video Promotion", href: "#video-promotion", badge: "Hot" },
-    { name: "Services", href: "#services" },
-    { name: "Packages", href: "#packages" },
-    { name: "Price List", href: "#price-list" },
-    { name: "Quotation PDF", href: "#quotation", badge: "PDF" },
-    { name: "Process", href: "#process" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "About", href: "#about" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#contact" },
+    { name: "Video Promotion", href: "/#video-promotion", badge: "Hot" },
+    { name: "Services", href: "/#services" },
+    { name: "Packages", href: "/#packages" },
+    { name: "Price List", href: "/#price-list" },
+    { name: "Quotation PDF", href: "/#quotation", badge: "PDF" },
+    { name: "Process", href: "/#process" },
+    { name: "Portfolio", href: "/#portfolio" },
+    { name: "About", href: "/#about" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="relative px-2.5 xl:px-3 py-1.5 text-xs xl:text-sm font-medium text-neutral-700 hover:text-[#8B0A13] transition-colors rounded-md hover:bg-neutral-50 whitespace-nowrap"
@@ -59,7 +59,7 @@ export default function Header() {
                     {link.badge}
                   </span>
                 )}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -127,7 +127,7 @@ export default function Header() {
         <div className="lg:hidden border-b border-neutral-200 bg-white/98 backdrop-blur-lg px-4 pt-3 pb-6 animate-fadeIn">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
@@ -141,7 +141,7 @@ export default function Header() {
                 ) : (
                   <ArrowUpRight className="w-4 h-4 text-neutral-400" />
                 )}
-              </a>
+              </Link>
             ))}
           </div>
 

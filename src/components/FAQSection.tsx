@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { siteConfig } from "@/config/siteConfig";
-import { ChevronDown, HelpCircle, MessageCircle } from "lucide-react";
+import { ChevronDown, MessageCircle } from "lucide-react";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

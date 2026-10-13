@@ -7,7 +7,6 @@ import {
   MessageCircle,
   MapPin,
   ArrowUp,
-  Heart,
 } from "lucide-react";
 
 export default function Footer() {
@@ -59,44 +58,49 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-neutral-400">
               <li>
-                <a href="#video-promotion" className="hover:text-white transition-colors">
+                <Link href="/video-promotion" className="hover:text-white transition-colors">
                   Promotional Videos (Reels)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">
+                <Link href="/services" className="hover:text-white transition-colors">
                   All Digital Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#packages" className="hover:text-white transition-colors">
-                  Packages &amp; Pricing Info
-                </a>
+                <Link href="/pricing" className="hover:text-white transition-colors">
+                  2026 Price List &amp; Packages
+                </Link>
               </li>
               <li>
-                <a href="#process" className="hover:text-white transition-colors">
+                <Link href="/quotation" className="hover:text-white transition-colors">
+                  Instant Quotation PDF Builder
+                </Link>
+              </li>
+              <li>
+                <Link href="/#process" className="hover:text-white transition-colors">
                   How It Works (8 Steps)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#portfolio" className="hover:text-white transition-colors">
+                <Link href="/#portfolio" className="hover:text-white transition-colors">
                   Sample Concepts &amp; Work
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition-colors">
+                <Link href="/#about" className="hover:text-white transition-colors">
                   About ViralPro LK
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#faq" className="hover:text-white transition-colors">
+                <Link href="/#faq" className="hover:text-white transition-colors">
                   Frequently Asked Questions
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white transition-colors">
+                <Link href="/#contact" className="hover:text-white transition-colors">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
                 <a

@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Promotional Video Production | ViralPro LK Anuradhapura",
   description:
     "Professional promotional videos and reels shot with iPhone 16 Pro Max for Sri Lankan businesses. 9:16 vertical formats for Facebook Reels, TikTok & Instagram.",
+  alternates: {
+    canonical: "/video-promotion",
+  },
 };
 
 export default function VideoPromotionPage() {

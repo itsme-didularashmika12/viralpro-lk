@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { siteConfig } from "@/config/siteConfig";
-import { Home, MessageCircle, ArrowLeft } from "lucide-react";
+import { Home, MessageCircle } from "lucide-react";
 
 export default function NotFound() {
   return (

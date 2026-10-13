@@ -7,6 +7,10 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://viralpro-lk.vercel.app/sitemap.xml",
+    sitemap: [
+      "https://viralpro-lk.vercel.app/sitemap.xml",
+      "https://viralpro-lk.vercel.app/sitemap-main.xml",
+      "https://viralpro-lk.vercel.app/sitemap_index.xml",
+    ],
   };
 }

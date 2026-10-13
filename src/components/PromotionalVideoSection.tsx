@@ -3,15 +3,11 @@ import Image from "next/image";
 import { siteConfig } from "@/config/siteConfig";
 import {
   Video,
-  Sparkles,
-  Smartphone,
   CheckCircle2,
   ArrowRight,
   MessageCircle,
   Users,
   Compass,
-  Share2,
-  Layers,
 } from "lucide-react";
 
 export default function PromotionalVideoSection() {

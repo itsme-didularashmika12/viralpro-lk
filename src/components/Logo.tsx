@@ -7,14 +7,8 @@ interface LogoProps {
   size?: "sm" | "md" | "lg";
 }
 
-export default function Logo({ variant = "dark", className = "", size = "md" }: LogoProps) {
+export default function Logo({ variant = "dark", className = "" }: LogoProps) {
   const isLight = variant === "light";
-  
-  const sizeClasses = {
-    sm: "h-8",
-    md: "h-10",
-    lg: "h-12",
-  }[size];
 
   return (
     <Link href="/" className={`inline-flex items-center gap-2.5 group transition-transform active:scale-95 ${className}`}>

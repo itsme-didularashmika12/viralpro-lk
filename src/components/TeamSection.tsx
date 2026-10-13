@@ -7,7 +7,6 @@ import {
   Video,
   Navigation,
   Smile,
-  ShieldCheck,
 } from "lucide-react";
 
 export default function TeamSection() {

@@ -9,9 +9,6 @@ import {
   Send,
   CheckCircle2,
   AlertCircle,
-  ExternalLink,
-  Clock,
-  Sparkles,
 } from "lucide-react";
 
 export default function ContactSection() {
@@ -31,15 +28,23 @@ export default function ContactSection() {
   const [whatsappFollowup, setWhatsappFollowup] = useState("");
 
   const servicesDropdown = [
-    "Promotional Video",
-    "Social Media Management",
-    "Graphic Design & Branding",
-    "Business Website",
-    "Mobile / Web App",
-    "POS / Business System",
-    "Automation & AI Chatbot",
-    "Education / LMS Platform",
-    "Other Custom Solution",
+    "Promotional Video (From Rs. 45,000)",
+    "Reels / Short Videos (From Rs. 12,500)",
+    "Social Media Management (From Rs. 45,000/mo)",
+    "Facebook / Instagram Management (From Rs. 35,000/mo)",
+    "Advertising / Ads Management (From Rs. 30,000/mo)",
+    "Content Creation / TikTok / YouTube",
+    "Drone Promotion (From Rs. 30,000)",
+    "Photography / Actor / Voice-Over",
+    "Graphic Design / Logo / Business Branding",
+    "Website Development (From Rs. 60,000)",
+    "E-Commerce Website (From Rs. 180,000)",
+    "Mobile App Development (From Rs. 800,000)",
+    "LMS / Online Class System (From Rs. 450,000)",
+    "POS / Inventory / CRM / HRM / Dashboard System",
+    "AI / Business Automation / WhatsApp & Telegram Bot",
+    "QR / Digital Business Materials",
+    "Custom Combined Business Package",
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -75,7 +80,7 @@ export default function ContactSection() {
         {/* Section Header (Final CTA Headline) */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#8B0A13]/10 text-[#8B0A13] mb-3">
-            Let's Talk Business
+            Let&apos;s Talk Business
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 tracking-tight sinhala-text mb-4">
             ඔබේ Business එකේ Digital වැඩ ගැන කතා කරමු.

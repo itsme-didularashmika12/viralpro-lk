@@ -29,10 +29,8 @@ export default function QuotationBuilderSection() {
   const [customerName, setCustomerName] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
-  const [customerEmail, setCustomerEmail] = useState("");
   const [customerAddress, setCustomerAddress] = useState("");
   const [projectTitle, setProjectTitle] = useState("Digital Marketing & Production Services");
-  const [issueDate, setIssueDate] = useState(today);
   const [validUntil, setValidUntil] = useState(defaultValidUntil);
 
   const [selectedCatId, setSelectedCatId] = useState(priceList[0]?.id ?? "");
@@ -119,13 +117,12 @@ export default function QuotationBuilderSection() {
   function handleDownloadPdf() {
     generateQuotationPdf({
       quotationNumber: quotationNumber.trim() || "VP-Q-2026",
-      issueDate,
+      issueDate: today,
       validUntil,
       status: "OFFICIAL QUOTATION",
       customerName: customerName.trim() || "Valued Customer",
       businessName: businessName.trim(),
       customerPhone: customerPhone.trim(),
-      customerEmail: customerEmail.trim(),
       customerAddress: customerAddress.trim(),
       projectTitle: projectTitle.trim(),
       items,
@@ -140,7 +137,7 @@ export default function QuotationBuilderSection() {
       `*VIRALPRO LK — OFFICIAL QUOTATION*`,
       `Quotation No: *${quotationNumber}*`,
       `Customer: *${customerName || "Valued Customer"}*${businessName ? ` (${businessName})` : ""}`,
-      `Date: ${issueDate}${validUntil ? ` (Valid until ${validUntil})` : ""}`,
+      `Date: ${today}${validUntil ? ` (Valid until ${validUntil})` : ""}`,
       ``,
       `*Selected Services & Packages:*`,
       ...items.map(
@@ -504,7 +501,7 @@ export default function QuotationBuilderSection() {
                     <FileText className="w-3 h-3" /> Quotation PDF
                   </span>
                   <p className="text-xs font-bold text-neutral-900 mt-1">{quotationNumber}</p>
-                  <p className="text-[10px] text-neutral-500">Date: {issueDate}</p>
+                  <p className="text-[10px] text-neutral-500">Date: {today}</p>
                 </div>
               </div>
 

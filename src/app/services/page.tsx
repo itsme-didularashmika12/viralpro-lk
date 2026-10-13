@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "All Digital Services | ViralPro LK Anuradhapura",
   description:
     "Promotional videos, social media management, graphic design, business websites, mobile apps, POS systems and AI automation for Sri Lankan businesses.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

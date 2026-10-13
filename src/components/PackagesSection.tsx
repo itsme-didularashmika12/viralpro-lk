@@ -2,14 +2,11 @@ import React from "react";
 import { siteConfig } from "@/config/siteConfig";
 import {
   Check,
-  Sparkles,
-  ArrowRight,
   MessageCircle,
   Truck,
   Users,
   Compass,
   AlertCircle,
-  ShieldCheck,
 } from "lucide-react";
 
 export default function PackagesSection() {
