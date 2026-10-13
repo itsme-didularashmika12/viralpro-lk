@@ -1,27 +1,27 @@
 import { MongoClient } from "mongodb";
 
-const uri = process.env.MONGODB_URI || "mongodb+srv://Didula:DidulaMD@didulamd.mgwjqat.mongodb.net/?retryWrites=true&w=majority";
 const options = {
   maxPoolSize: 10,
   serverSelectionTimeoutMS: 5000,
 };
 
-let client: MongoClient;
-let clientPromise: Promise<MongoClient>;
-
 declare global {
   var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
 
-if (process.env.NODE_ENV === "development") {
-  if (!global._mongoClientPromise) {
-    client = new MongoClient(uri, options);
-    global._mongoClientPromise = client.connect();
+export function getMongoClient(): Promise<MongoClient> {
+  const uri = process.env.MONGODB_URI;
+  if (!uri) {
+    return Promise.reject(new Error("MONGODB_URI is not configured"));
   }
-  clientPromise = global._mongoClientPromise;
-} else {
-  client = new MongoClient(uri, options);
-  clientPromise = client.connect();
+  if (!global._mongoClientPromise) {
+    const client = new MongoClient(uri, options);
+    global._mongoClientPromise = client.connect().catch((err) => {
+      global._mongoClientPromise = undefined;
+      throw err;
+    });
+  }
+  return global._mongoClientPromise;
 }
 
-export default clientPromise;
+export default getMongoClient;

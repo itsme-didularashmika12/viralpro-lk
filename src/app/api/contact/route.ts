@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import clientPromise from "@/lib/mongodb";
+import { getMongoClient } from "@/lib/mongodb";
 import { siteConfig } from "@/config/siteConfig";
 
 export async function POST(request: Request) {
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 
     // Save to MongoDB
     try {
-      const client = await clientPromise;
+      const client = await getMongoClient();
       const db = client.db("viralpro_db");
       const result = await db.collection("inquiries").insertOne(sanitizedData);
       
