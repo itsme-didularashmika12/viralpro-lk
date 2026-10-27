@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { priceList } from "@/config/priceList";
 import { generateQuotationPdf, type QuotationLineItem } from "@/lib/quotation-pdf";
 import { Download, FilePlus2, FileText, MessageCircle, Plus, Trash2 } from "lucide-react";
@@ -16,22 +16,29 @@ function formatLkr(amount: number): string {
 }
 
 export default function QuotationBuilderSection() {
-  const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
-  const defaultValidUntil = useMemo(() => {
-    const d = new Date();
-    d.setDate(d.getDate() + 14);
-    return d.toISOString().slice(0, 10);
-  }, []);
+  const [today, setToday] = useState("");
+  const [quotationNumber, setQuotationNumber] = useState("");
+  const [validUntil, setValidUntil] = useState("");
 
-  const [quotationNumber, setQuotationNumber] = useState(
-    () => `VP-Q-${new Date().getFullYear()}-${String(Math.floor(1000 + Math.random() * 9000))}`
-  );
+  // Dates and random quotation numbers must be created in the browser, not
+  // during static prerendering; otherwise hydration and stale build dates can
+  // make the interactive price/quotation form inconsistent.
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      const now = new Date();
+      const expiry = new Date(now);
+      expiry.setDate(expiry.getDate() + 14);
+      setToday(now.toISOString().slice(0, 10));
+      setValidUntil(expiry.toISOString().slice(0, 10));
+      setQuotationNumber(`VP-Q-${now.getFullYear()}-${String(Math.floor(1000 + Math.random() * 9000))}`);
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
   const [customerName, setCustomerName] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
   const [customerAddress, setCustomerAddress] = useState("");
   const [projectTitle, setProjectTitle] = useState("Digital Marketing & Production Services");
-  const [validUntil, setValidUntil] = useState(defaultValidUntil);
 
   const [selectedCatId, setSelectedCatId] = useState(priceList[0]?.id ?? "");
   const [selectedPkgIdx, setSelectedPkgIdx] = useState(0);

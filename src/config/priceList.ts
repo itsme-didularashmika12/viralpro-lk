@@ -1,7 +1,7 @@
 /* ============================================================
    ViralPro LK — Complete 2026 LKR Price List (source of truth)
-   Synced with the ViralPro LK Commission Management System catalog
-   (31 services, 128 packages).
+   31 services, 128 packages. The public site and commission catalog
+   are managed separately; billing labels follow the approved rate card.
    ============================================================ */
 
 export interface PriceItem {
@@ -108,9 +108,9 @@ export const priceList: PriceCategory[] = [
     id: "youtube-services",
     title: "YouTube Services",
     items: [
-      { name: "Basic", amount: "35,000" },
-      { name: "Standard", amount: "75,000" },
-      { name: "Premium", amount: "150,000" },
+      { name: "Basic", amount: "35,000", unit: "/ Month" },
+      { name: "Standard", amount: "75,000", unit: "/ Month" },
+      { name: "Premium", amount: "150,000", unit: "/ Month" },
       { name: "Custom", quote: "Quotation" },
     ],
   },
